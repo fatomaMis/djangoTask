@@ -1,0 +1,42 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
+<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+{% load static %}
+<script src="{% static 'js/jquery-3.1.1.js' %}"></script>
+<script src="{% static 'js/style.js' %}"></script>
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="chat_window">
+    <div class="top_menu">
+        <div class="title">Chat</div>
+
+    </div><ul class="messages" id="message">
+    </ul>
+    <div class="bottom_wrapper clearfix">
+        
+        <form method="post" action="/chatapp/home/send">
+        <div class="message_input_wrapper">
+            <input id="message_input" class="message_input" value="" placeholder="Type your message here..." name="msg"/>
+        </div>
+        <div style="height:20px"></div>
+        <div class="message_input_wrapper">
+            <input id="email" class="message_input" value="" placeholder="Type your email here..." name="email" required/>
+        </div>
+        <div class="send_message">
+        <div class="icon"></div>
+        <div class="text" onclick="func()">Send</div>
+        </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="message_template">
+    <li class="message">
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+            <div class="text"></div>
+        </div>
+    </li>
+</div>
